@@ -4,6 +4,8 @@
 **Time Estimate**: 6-8 hours
 **Notion Source**: [Link](https://www.notion.so/48da4fa9d9b4495698ebe27a66a92de5)
 
+> **Note for absolute beginners**: If you have never written C++ before, complete [Day 7.5: C++ Primer](../cpp-primer/README.md) before starting this lesson.
+
 ## Learning Objectives
 
 By the end of this lesson, you should be able to:

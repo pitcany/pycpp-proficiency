@@ -4,6 +4,8 @@
 **Time Estimate**: 6-8 hours
 **Notion Source**: [Link](https://www.notion.so/ff5ab5e0e9e747e5b66b030e825a109d)
 
+> **Note for absolute beginners**: If you have never written Python before, complete [Day 0.5: Python Primer](../../foundations/python-primer/README.md) before starting this lesson.
+
 ## Learning Objectives
 
 By the end of this lesson, you should be able to:

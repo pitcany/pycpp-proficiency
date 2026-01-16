@@ -1,6 +1,6 @@
 # 2-Week Python & C++ Proficiency for Statisticians and Data Scientists
 
-**Version**: 1.0.0-beta | **Last Updated**: January 2, 2026
+**Version**: 1.0.0-beta | **Last Updated**: January 16, 2026
 
 A comprehensive curriculum for working proficiency in statistical computing: implementing numerically stable algorithms in Python (NumPy/pandas ecosystem) and foundational C++ skills for performance-critical numerical code.
 
@@ -10,6 +10,10 @@ This curriculum assumes fluency in:
 - Probability and statistics
 - Linear algebra
 - Optimization
+
+**Programming background**: The course assumes basic familiarity with Python and C++ syntax. If you have **never** written Python or C++ before, optional primer modules are available:
+- **Day 0.5: Python Primer** (3-4 hours) - Complete before Day 1 if you're new to Python
+- **Day 7.5: C++ Primer** (3-4 hours) - Complete before Day 8 if you're new to C++
 
 ## Quick Start
 
@@ -44,6 +48,7 @@ cmake --build build
 ```
 Week 0: Foundations
 ├── Day 0: Environment Setup
+├── Day 0.5: Python Primer (Optional - for absolute beginners)
 └── Algorithmic Thinking for Statistical Code
 
 Week 1: Python (Days 1-7)
@@ -54,6 +59,9 @@ Week 1: Python (Days 1-7)
 ├── Day 5: Testable, Reusable Code
 ├── Day 6: Reproducibility, Randomness, and State
 └── Day 7: Debugging, Profiling, and Python Capstone
+
+Week 1.5: Transition
+└── Day 7.5: C++ Primer (Optional - for absolute beginners)
 
 Week 2: C++ (Days 8-14)
 ├── Day 8: References, Pointers, and Ownership
@@ -89,9 +97,13 @@ pycpp-proficiency/
 │
 ├── lessons/
 │   ├── foundations/
-│   ├── week1/
-│   ├── week2/
-│   └── week3/
+│   │   ├── setup-day-0/
+│   │   ├── python-primer/        # Day 0.5 (optional)
+│   │   └── algorithmic-thinking/
+│   ├── week1/                     # Days 1-7
+│   ├── week2/                     # Days 8-14
+│   │   └── cpp-primer/            # Day 7.5 (optional)
+│   └── week3/                     # Days 15-20 (optional)
 │
 ├── src/
 │   ├── python_lib/           # Shared Python utilities

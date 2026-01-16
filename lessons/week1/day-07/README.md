@@ -106,4 +106,8 @@ See [exercises.md](exercises.md) for the full capstone specification.
 
 ## Next Steps
 
-Congratulations on completing Week 1! Proceed to [Day 8: References, Pointers, and Ownership](../../week2/day-08/README.md).
+Congratulations on completing Week 1!
+
+**If you have never written C++ before**, complete [Day 7.5: C++ Primer](../../week2/cpp-primer/README.md) before starting Week 2.
+
+**If you're comfortable with basic C++ syntax**, proceed directly to [Day 8: References, Pointers, and Ownership](../../week2/day-08/README.md).

@@ -24,6 +24,7 @@
       "order": 0,
       "lessons": [
         "setup-day-0",
+        "python-primer",
         "algorithmic-thinking"
       ]
     },
@@ -46,6 +47,7 @@
       "title": "Week 2: C++ (Days 8-14)",
       "order": 2,
       "lessons": [
+        "cpp-primer",
         "day-08",
         "day-09",
         "day-10",
