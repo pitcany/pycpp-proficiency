@@ -10,7 +10,6 @@ This curriculum assumes fluency in:
 - Probability and statistics
 - Linear algebra
 - Optimization
-- Basic Python and C++ syntax
 
 ## Quick Start
 
