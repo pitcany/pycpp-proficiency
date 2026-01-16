@@ -1,0 +1,705 @@
+{
+  "course_title": "2-Week Python & C++ Proficiency for Statisticians and Data Scientists",
+  "version": "1.0.0-beta",
+  "last_updated": "2026-01-02",
+  "notion_root_url": "https://www.notion.so/2dc342cf7cc8807b9122dc79f2781d1e",
+  "description": "Working proficiency in statistical computing: implementing numerically stable algorithms in Python (NumPy/pandas) and foundational C++ skills for performance-critical numerical code with Eigen.",
+  "prerequisites": [
+    "Fluency in probability and statistics",
+    "Linear algebra proficiency",
+    "Optimization background",
+    "Basic Python syntax familiarity",
+    "Basic C++ syntax familiarity"
+  ],
+  "proficiency_standards": {
+    "exercise_performance": "≥1.5/2.0 average across all Foundational exercises",
+    "capstone_performance": "≥1.5/2.0 on EACH dimension of both capstone rubrics",
+    "oral_defense": "≥80% of questions at strong answer level",
+    "time_investment": "50-60 hours total (6-8 hours/day × 2 weeks)"
+  },
+  "modules": [
+    {
+      "id": "foundations",
+      "title": "Foundations",
+      "order": 0,
+      "lessons": ["setup-day-0", "algorithmic-thinking"]
+    },
+    {
+      "id": "week1-python",
+      "title": "Week 1: Python (Days 1-7)",
+      "order": 1,
+      "lessons": ["day-01", "day-02", "day-03", "day-04", "day-05", "day-06", "day-07"]
+    },
+    {
+      "id": "week2-cpp",
+      "title": "Week 2: C++ (Days 8-14)",
+      "order": 2,
+      "lessons": ["day-08", "day-09", "day-10", "day-11", "day-12", "day-13", "day-14"]
+    },
+    {
+      "id": "week3-optional",
+      "title": "Week 3: Optional Extensions (Days 15-20)",
+      "order": 3,
+      "lessons": ["day-15", "day-16", "day-17", "day-18", "day-19", "day-20"]
+    }
+  ],
+  "pages": [
+    {
+      "id": "setup-day-0",
+      "notion_id": "2dc342cf-7cc8-8043-9ef1-cd8049f3df3d",
+      "title": "Setup (Day 0)",
+      "parent_id": null,
+      "order": 0,
+      "language": "mixed",
+      "week": "foundations",
+      "notion_url": "https://www.notion.so/2dc342cf7cc880439ef1cd8049f3df3d",
+      "sections": [
+        "Python Setup",
+        "C++ Setup",
+        "Troubleshooting"
+      ],
+      "learning_objectives": [
+        "Verify working Python 3.10+ environment",
+        "Verify working C++ compiler (g++ 9+ or clang 12+)",
+        "Install required packages with version pins",
+        "Verify sanitizers support"
+      ],
+      "tasks": []
+    },
+    {
+      "id": "algorithmic-thinking",
+      "notion_id": "2dc342cf-7cc8-8040-aa44-c1326ebbf73c",
+      "title": "Algorithmic Thinking for Statistical Code",
+      "parent_id": null,
+      "order": 1,
+      "language": "theory",
+      "week": "foundations",
+      "notion_url": "https://www.notion.so/2dc342cf7cc88040aa44c1326ebbf73c",
+      "sections": [
+        "Core Mental Models",
+        "Statistical Algorithm Patterns",
+        "Tradeoff Playbook",
+        "Micro-Drills",
+        "Oral Defense Add-On"
+      ],
+      "learning_objectives": [
+        "Math to Computation Translation",
+        "Estimators as Reductions",
+        "Simulation as Pipelines",
+        "Data Representation and Memory Intuition",
+        "Invariants and Correctness Conditions",
+        "Numerical Robustness and Stability",
+        "Performance Workflow"
+      ],
+      "tasks": [
+        {"level": "foundational", "title": "Log-sum-exp stable computation"},
+        {"level": "foundational", "title": "Running mean and variance (Welford)"},
+        {"level": "foundational", "title": "Discrete distribution sampling"},
+        {"level": "proficiency", "title": "Pairwise Euclidean distances without loops"},
+        {"level": "proficiency", "title": "Reservoir sampling"},
+        {"level": "proficiency", "title": "Solve Ax=b without explicit inversion"},
+        {"level": "mastery", "title": "Kahan summation"},
+        {"level": "mastery", "title": "Stable softmax"},
+        {"level": "mastery", "title": "Iterative refinement for ill-conditioned systems"},
+        {"level": "mastery", "title": "Alias method for O(1) sampling"}
+      ]
+    },
+    {
+      "id": "day-01",
+      "notion_id": "ff5ab5e0-e9e7-47e5-b66b-030e825a109d",
+      "title": "Day 1: Functions, Modules, and Idiomatic Python",
+      "parent_id": "week1-python",
+      "order": 1,
+      "language": "python",
+      "week": "week1",
+      "notion_url": "https://www.notion.so/ff5ab5e0e9e747e5b66b030e825a109d",
+      "sections": [
+        "Function Design",
+        "Module Organization",
+        "Context Managers",
+        "Comprehensions and Generators"
+      ],
+      "learning_objectives": [
+        "Write functions with explicit type hints and docstrings",
+        "Organize code into importable modules",
+        "Use context managers (with statements) for resource management",
+        "Apply list/dict comprehensions and generator expressions idiomatically",
+        "Understand when to use *args, **kwargs, and default arguments"
+      ],
+      "tasks": [
+        {"level": "foundational", "id": "1.1", "title": "Refactor Function"},
+        {"level": "foundational", "id": "1.2", "title": "Module Design"}
+      ]
+    },
+    {
+      "id": "day-02",
+      "notion_id": "414f937f-1492-46e8-99a2-fb2b2b482f4e",
+      "title": "Day 2: Memory Model, Views, and Copies",
+      "parent_id": "week1-python",
+      "order": 2,
+      "language": "python",
+      "week": "week1",
+      "notion_url": "https://www.notion.so/414f937f149246e899a2fb2b2b482f4e",
+      "sections": [
+        "References vs Copies",
+        "Shallow vs Deep Copy",
+        "NumPy Views vs Copies",
+        "Common Pitfalls"
+      ],
+      "learning_objectives": [
+        "Distinguish between shallow copies, deep copies, and references",
+        "Predict when NumPy operations return views vs copies",
+        "Debug unintended mutations in nested data structures",
+        "Use is vs == correctly",
+        "Understand object mutability and its implications"
+      ],
+      "tasks": [
+        {"level": "foundational", "id": "2.1", "title": "Debug the Mutation"},
+        {"level": "foundational", "id": "2.2", "title": "NumPy View Detective"}
+      ]
+    },
+    {
+      "id": "day-03",
+      "notion_id": "4e025218-f330-406d-a7cf-4dc073a75426",
+      "title": "Day 3: Broadcasting and Vectorization",
+      "parent_id": "week1-python",
+      "order": 3,
+      "language": "python",
+      "week": "week1",
+      "notion_url": "https://www.notion.so/4e025218f330406da7cf4dc073a75426",
+      "sections": [
+        "Broadcasting Rules",
+        "Controlling Broadcasting with newaxis",
+        "Vectorization",
+        "Common Pitfalls"
+      ],
+      "learning_objectives": [
+        "Apply broadcasting rules to combine arrays of different shapes",
+        "Vectorize computations to replace Python loops",
+        "Use np.newaxis and reshape to control broadcasting",
+        "Avoid common broadcasting pitfalls",
+        "Benchmark vectorized vs loop-based code"
+      ],
+      "tasks": [
+        {"level": "foundational", "id": "3.1", "title": "Normalize by Row and Column"},
+        {"level": "foundational", "id": "3.2", "title": "Vectorize Sigmoid Function"}
+      ]
+    },
+    {
+      "id": "day-04",
+      "notion_id": "6789a15b-62cd-4330-8c45-5bff90dd58c5",
+      "title": "Day 4: Pandas Pitfalls and Alternatives",
+      "parent_id": "week1-python",
+      "order": 4,
+      "language": "python",
+      "week": "week1",
+      "notion_url": "https://www.notion.so/6789a15b62cd43308c455bff90dd58c5",
+      "sections": [
+        "Indexing Done Right",
+        "Performance Pitfalls",
+        "Method Chaining",
+        "Alternatives to Pandas (Polars, DuckDB)"
+      ],
+      "learning_objectives": [
+        "Avoid chained indexing and SettingWithCopyWarning",
+        "Use .loc, .iloc, and .query() correctly",
+        "Recognize when Pandas is slow",
+        "Apply Polars or DuckDB for large datasets",
+        "Write transformation pipelines using method chaining"
+      ],
+      "tasks": [
+        {"level": "foundational", "id": "4.1", "title": "Fix the Chained Indexing"},
+        {"level": "foundational", "id": "4.2", "title": "Optimize the Loop"},
+        {"level": "proficiency", "id": "4.3", "title": "Convert to Polars"}
+      ]
+    },
+    {
+      "id": "day-05",
+      "notion_id": "5de7edf4-0e52-41df-bad2-36f5bbd4717f",
+      "title": "Day 5: Testable, Reusable Code",
+      "parent_id": "week1-python",
+      "order": 5,
+      "language": "python",
+      "week": "week1",
+      "notion_url": "https://www.notion.so/5de7edf40e5241dfbad236f5bbd4717f",
+      "sections": [
+        "Function Design Principles",
+        "Unit Testing with pytest",
+        "Fixtures and Parametrize",
+        "Package Organization",
+        "Test-Driven Development (TDD)"
+      ],
+      "learning_objectives": [
+        "Design functions with single responsibilities",
+        "Write unit tests with pytest",
+        "Use fixtures and parametrize tests",
+        "Organize code into packages",
+        "Apply test-driven development (TDD) basics"
+      ],
+      "tasks": [
+        {"level": "foundational", "id": "5.1", "title": "Write Tests"},
+        {"level": "foundational", "id": "5.2", "title": "Refactor for Testability"}
+      ]
+    },
+    {
+      "id": "day-06",
+      "notion_id": "d1ed8d3d-176e-4e95-a2d8-f8b2bdff069f",
+      "title": "Day 6: Reproducibility, Randomness, and State",
+      "parent_id": "week1-python",
+      "order": 6,
+      "language": "python",
+      "week": "week1",
+      "notion_url": "https://www.notion.so/d1ed8d3d176e4e95a2d8f8b2bdff069f",
+      "sections": [
+        "Random Seed Basics",
+        "Modern Random Number Generation",
+        "Python's random Module",
+        "Stateful Functions",
+        "Reproducible Simulations",
+        "Parallel Randomness"
+      ],
+      "learning_objectives": [
+        "Set random seeds for NumPy and Python's random module",
+        "Use np.random.Generator for modern random number generation",
+        "Understand when state persists across function calls",
+        "Write reproducible simulation code",
+        "Manage randomness in parallel computations"
+      ],
+      "tasks": [
+        {"level": "foundational", "id": "6.1", "title": "Debug Reproducibility"},
+        {"level": "proficiency", "id": "6.2", "title": "Implement Reproducible Bootstrap"}
+      ]
+    },
+    {
+      "id": "day-07",
+      "notion_id": "7a503edf-4cb3-4078-8f74-8748b3d6d2f6",
+      "title": "Day 7: Debugging, Profiling, and Python Capstone",
+      "parent_id": "week1-python",
+      "order": 7,
+      "language": "python",
+      "week": "week1",
+      "notion_url": "https://www.notion.so/7a503edf4cb340788f748748b3d6d2f6",
+      "sections": [
+        "Debugging with pdb",
+        "Logging",
+        "Profiling",
+        "Optimization Strategies",
+        "Week 1 Python Capstone"
+      ],
+      "learning_objectives": [
+        "Use pdb and IDE debuggers effectively",
+        "Instrument code with logging instead of print statements",
+        "Profile code to identify bottlenecks",
+        "Optimize slow code using profiling insights",
+        "Complete the Week 1 Python capstone project"
+      ],
+      "tasks": [
+        {"level": "capstone", "id": "python-capstone", "title": "Statistical Analysis Pipeline", "expected_time": "90-120 minutes"}
+      ],
+      "capstone": {
+        "title": "Statistical Analysis Pipeline",
+        "requirements": [
+          "Create reusable module with type-hinted functions",
+          "Use context managers for file I/O",
+          "Correctly handle NumPy views and copies",
+          "Vectorize all computations (no Python loops over data)",
+          "Use Pandas with .loc (no chained indexing)",
+          "Write unit tests with pytest (>80% coverage)",
+          "Accept rng parameter for all random operations",
+          "Use logging instead of print statements",
+          "Profile code and optimize bottlenecks"
+        ],
+        "rubric_dimensions": ["Code Quality", "Functionality", "Best Practices", "Testing"]
+      }
+    },
+    {
+      "id": "day-08",
+      "notion_id": "48da4fa9-d9b4-4956-98eb-e27a66a92de5",
+      "title": "Day 8: References, Pointers, and Ownership",
+      "parent_id": "week2-cpp",
+      "order": 8,
+      "language": "cpp",
+      "week": "week2",
+      "notion_url": "https://www.notion.so/48da4fa9d9b4495698ebe27a66a92de5",
+      "sections": [
+        "Pointers vs References",
+        "Pass by Value vs Reference vs Pointer",
+        "Ownership: Who is Responsible for Cleanup?",
+        "Dangling Pointers and References",
+        "Stack vs Heap Allocation",
+        "Build Systems and Debugging"
+      ],
+      "learning_objectives": [
+        "Distinguish between references and pointers",
+        "Use pass-by-reference correctly for function parameters",
+        "Understand stack vs heap allocation",
+        "Reason about object lifetime and ownership",
+        "Avoid dangling pointers and references",
+        "Use smart pointers for automatic memory management"
+      ],
+      "tasks": [
+        {"level": "foundational", "id": "8.1", "title": "Stack vs Heap"},
+        {"level": "foundational", "id": "8.2", "title": "Fix the Dangling Reference"},
+        {"level": "foundational", "id": "8.3", "title": "Use AddressSanitizer"}
+      ]
+    },
+    {
+      "id": "day-09",
+      "notion_id": "dc952dcf-593f-4220-a6ac-047fc16133e7",
+      "title": "Day 9: Smart Pointers and Ownership Semantics",
+      "parent_id": "week2-cpp",
+      "order": 9,
+      "language": "cpp",
+      "week": "week2",
+      "notion_url": "https://www.notion.so/dc952dcf593f4220a6ac047fc16133e7",
+      "sections": [
+        "Why Smart Pointers?",
+        "std::unique_ptr: Exclusive Ownership",
+        "std::shared_ptr: Shared Ownership",
+        "std::weak_ptr: Breaking Cycles",
+        "Rule of Three (or Rule of Zero)",
+        "Passing Smart Pointers"
+      ],
+      "learning_objectives": [
+        "Use std::unique_ptr for exclusive ownership",
+        "Use std::shared_ptr for shared ownership",
+        "Use std::weak_ptr to break reference cycles",
+        "Understand when each smart pointer is appropriate",
+        "Implement the Rule of Three (or Rule of Zero)",
+        "Avoid memory leaks through RAII"
+      ],
+      "tasks": [
+        {"level": "foundational", "id": "9.1", "title": "Implement Rule of Three"},
+        {"level": "foundational", "id": "9.2", "title": "Break Reference Cycle"},
+        {"level": "proficiency", "id": "9.3", "title": "unique_ptr Factory"}
+      ]
+    },
+    {
+      "id": "day-10",
+      "notion_id": "c5185fd1-7150-4ab7-a9cb-c3144072c5ca",
+      "title": "Day 10: RAII, Move Semantics, and Destructors",
+      "parent_id": "week2-cpp",
+      "order": 10,
+      "language": "cpp",
+      "week": "week2",
+      "notion_url": "https://www.notion.so/c5185fd171504ab7a9cbc3144072c5ca",
+      "sections": [
+        "RAII: Resource Acquisition Is Initialization",
+        "Common RAII Types",
+        "Writing RAII Wrappers",
+        "Destructors: Cleanup Guarantees",
+        "Exception Safety and RAII",
+        "The Rule of Zero"
+      ],
+      "learning_objectives": [
+        "Understand the RAII principle and philosophy",
+        "Use unique_ptr for automatic cleanup",
+        "Recognize when destructors run",
+        "Write RAII wrappers for custom resources",
+        "Understand exception safety through RAII"
+      ],
+      "tasks": [
+        {"level": "foundational", "id": "10.1", "title": "RAII File Wrapper"},
+        {"level": "foundational", "id": "10.2", "title": "Scoped Timer"},
+        {"level": "proficiency", "id": "10.3", "title": "Exception Safety with RAII"}
+      ]
+    },
+    {
+      "id": "day-11",
+      "notion_id": "0626a614-1dcb-4595-a24d-95c25a2580e5",
+      "title": "Day 11: STL Containers, Algorithms, and Iterators",
+      "parent_id": "week2-cpp",
+      "order": 11,
+      "language": "cpp",
+      "week": "week2",
+      "notion_url": "https://www.notion.so/0626a6141dcb4595a24d95c25a2580e5",
+      "sections": [
+        "Containers: Choosing the Right Data Structure",
+        "Iterators: The Universal Pointer Abstraction",
+        "Algorithms: Generic, Composable, Efficient",
+        "Lambdas: Inline Anonymous Functions",
+        "Algorithm Composition",
+        "Performance Considerations"
+      ],
+      "learning_objectives": [
+        "Choose appropriate containers for different use cases",
+        "Use STL algorithms to replace raw loops",
+        "Understand iterator categories and invalidation",
+        "Write lambdas for use with algorithms",
+        "Compose operations using algorithm chaining"
+      ],
+      "tasks": [
+        {"level": "foundational", "id": "11.1", "title": "Erase-Remove Idiom"},
+        {"level": "foundational", "id": "11.2", "title": "Transform and Accumulate"},
+        {"level": "proficiency", "id": "11.3", "title": "Custom Comparator with Lambda"}
+      ]
+    },
+    {
+      "id": "day-12",
+      "notion_id": "47266ef0-5f25-405a-9676-dcd3392dc0b8",
+      "title": "Day 12: Numerical Stability and Floating-Point",
+      "parent_id": "week2-cpp",
+      "order": 12,
+      "language": "cpp",
+      "week": "week2",
+      "notion_url": "https://www.notion.so/47266ef05f25405a9676dcd3392dc0b8",
+      "sections": [
+        "Floating-Point Representation",
+        "Catastrophic Cancellation",
+        "Summation Stability",
+        "Log-Space Computation",
+        "Comparing Floating-Point Numbers",
+        "Overflow and Underflow"
+      ],
+      "learning_objectives": [
+        "Understand IEEE 754 floating-point representation",
+        "Avoid catastrophic cancellation in computations",
+        "Implement stable variance and summation algorithms",
+        "Use log-space computation to avoid overflow",
+        "Compare floating-point numbers correctly"
+      ],
+      "tasks": [
+        {"level": "foundational", "id": "12.1", "title": "Implement Welford's Algorithm"},
+        {"level": "foundational", "id": "12.2", "title": "Implement Log-Sum-Exp"},
+        {"level": "proficiency", "id": "12.3", "title": "Kahan Summation"}
+      ]
+    },
+    {
+      "id": "day-13",
+      "notion_id": "fc944ca1-1d28-4611-ae4a-853c384dd7e2",
+      "title": "Day 13: Performance Reasoning and Optimization",
+      "parent_id": "week2-cpp",
+      "order": 13,
+      "language": "cpp",
+      "week": "week2",
+      "notion_url": "https://www.notion.so/fc944ca11d284611ae4a853c384dd7e2",
+      "sections": [
+        "Memory Hierarchy",
+        "Data Layout Matters",
+        "Compiler Optimizations",
+        "Profiling",
+        "Benchmarking",
+        "Amdahl's Law",
+        "Optimization Strategies"
+      ],
+      "learning_objectives": [
+        "Understand the memory hierarchy (cache, RAM, disk)",
+        "Reason about cache-friendly vs cache-hostile code",
+        "Use profiling tools to identify bottlenecks",
+        "Apply Amdahl's law to predict speedups",
+        "Benchmark code correctly"
+      ],
+      "tasks": [
+        {"level": "foundational", "id": "13.1", "title": "Cache-Friendly Matrix Multiplication"},
+        {"level": "proficiency", "id": "13.2", "title": "Profile and Optimize"},
+        {"level": "proficiency", "id": "13.3", "title": "Apply Amdahl's Law"}
+      ]
+    },
+    {
+      "id": "day-14",
+      "notion_id": "64ebf681-f77a-4ec5-a6cd-53d0d10c774a",
+      "title": "Day 14: C++ Capstone and Cross-Language Integration",
+      "parent_id": "week2-cpp",
+      "order": 14,
+      "language": "cpp",
+      "week": "week2",
+      "notion_url": "https://www.notion.so/64ebf681f77a4ec5a6cd53d0d10c774a",
+      "sections": [
+        "Python vs C++: When to Use Each",
+        "Cross-Language Integration with pybind11",
+        "Passing NumPy Arrays",
+        "Performance Comparison",
+        "When C++ is Worth It",
+        "Week 2 C++ Capstone"
+      ],
+      "learning_objectives": [
+        "Complete a comprehensive C++ capstone project",
+        "Use pybind11 to expose C++ functions to Python",
+        "Pass NumPy arrays between Python and C++",
+        "Understand when to use C++ vs Python",
+        "Demonstrate proficiency in all Week 2 skills"
+      ],
+      "tasks": [
+        {"level": "capstone", "id": "cpp-capstone", "title": "Gaussian Mixture Model Fitting Library", "expected_time": "4-6 hours"}
+      ],
+      "capstone": {
+        "title": "Gaussian Mixture Model (GMM) Fitting Library",
+        "requirements": [
+          "Implement Matrix and Vector classes with RAII",
+          "Implement E-step and M-step with log-sum-exp stability",
+          "Use STL containers and algorithms",
+          "Cache-friendly memory layout",
+          "Profile E-step and M-step separately",
+          "Expose via pybind11",
+          "Accept/return NumPy arrays",
+          "Unit tests for each component",
+          "Verify against sklearn",
+          "Performance: <1s for 10K points in 20 dimensions with 5 components"
+        ],
+        "rubric_dimensions": ["Data Structures", "EM Algorithm", "Testing", "Performance", "Python Binding", "sklearn Match", "Documentation"]
+      }
+    },
+    {
+      "id": "day-15",
+      "notion_id": "9217bd45-6c4c-4397-b068-1087dd38f787",
+      "title": "Day 15: Advanced Python Engineering for Data Science",
+      "parent_id": "week3-optional",
+      "order": 15,
+      "language": "python",
+      "week": "week3",
+      "notion_url": "https://www.notion.so/9217bd456c4c4397b0681087dd38f787",
+      "sections": [
+        "Python Project Structure",
+        "Type Hints and Static Analysis",
+        "Logging for Experiments",
+        "Configuration Management"
+      ],
+      "learning_objectives": [
+        "Structure medium-scale Python projects for data science",
+        "Use type hints and static analysis (mypy)",
+        "Implement logging and configuration management",
+        "Design clean APIs for statistical functions"
+      ],
+      "tasks": [
+        {"level": "foundational", "id": "15.1", "title": "Refactor into Package", "expected_time": "25-35 minutes"},
+        {"level": "proficiency", "id": "15.1", "title": "Configurable Monte Carlo Simulation", "expected_time": "30-40 minutes"},
+        {"level": "mastery", "title": "Statistical Function Registry", "expected_time": "40-60 minutes"}
+      ]
+    },
+    {
+      "id": "day-16",
+      "notion_id": "df241842-a720-4686-92da-ff8c434680ed",
+      "title": "Day 16: Profiling, Benchmarking, and Performance Tuning",
+      "parent_id": "week3-optional",
+      "order": 16,
+      "language": "python",
+      "week": "week3",
+      "notion_url": "https://www.notion.so/df241842a720468692daff8c434680ed",
+      "sections": [
+        "Profiling Tools Deep Dive",
+        "Microbenchmarking",
+        "Optimization Patterns",
+        "Memory Optimization"
+      ],
+      "learning_objectives": [
+        "Conduct systematic performance profiling (CPU and memory)",
+        "Interpret profiling output to identify true bottlenecks",
+        "Apply targeted optimizations and validate speedups",
+        "Write microbenchmarks that measure specific operations"
+      ],
+      "tasks": [
+        {"level": "foundational", "id": "16.1", "title": "Profile Data Pipeline", "expected_time": "20-30 minutes"},
+        {"level": "proficiency", "id": "16.1", "title": "Pairwise Distance Benchmark", "expected_time": "30-40 minutes"},
+        {"level": "mastery", "title": "Pandas Optimization", "expected_time": "45-60 minutes"}
+      ]
+    },
+    {
+      "id": "day-17",
+      "notion_id": "17e40e9a-51df-4733-a8a4-b60ab9a272b2",
+      "title": "Day 17: Python ↔ C++ Boundaries and API Design",
+      "parent_id": "week3-optional",
+      "order": 17,
+      "language": "mixed",
+      "week": "week3",
+      "notion_url": "https://www.notion.so/17e40e9a51df4733a8a4b60ab9a272b2",
+      "sections": [
+        "pybind11 Basics",
+        "NumPy ↔ C++ Integration",
+        "API Design for Hybrid Code",
+        "Performance Considerations"
+      ],
+      "learning_objectives": [
+        "Wrap C++ functions for use in Python via pybind11",
+        "Design APIs that minimize data copying",
+        "Handle NumPy arrays in C++ using Eigen or raw pointers",
+        "Write hybrid codebases where Python orchestrates and C++ computes"
+      ],
+      "tasks": [
+        {"level": "foundational", "id": "17.1", "title": "Wrap compute_mean", "expected_time": "25-35 minutes"},
+        {"level": "proficiency", "id": "17.1", "title": "Rolling Window in C++", "expected_time": "35-50 minutes"},
+        {"level": "mastery", "title": "Hybrid Bootstrap", "expected_time": "50-70 minutes"}
+      ]
+    },
+    {
+      "id": "day-18",
+      "notion_id": "26e9a47a-4d3d-461a-8a55-dd6c755920ec",
+      "title": "Day 18: Numerical Robustness, Validation, and Stress Testing",
+      "parent_id": "week3-optional",
+      "order": 18,
+      "language": "python",
+      "week": "week3",
+      "notion_url": "https://www.notion.so/26e9a47a4d3d461a8a55dd6c755920ec",
+      "sections": [
+        "Common Numerical Issues",
+        "Stable Implementations",
+        "Validation Strategies",
+        "Stress Testing with Hypothesis"
+      ],
+      "learning_objectives": [
+        "Identify numerical instabilities in statistical algorithms",
+        "Implement numerically stable alternatives",
+        "Write tests that probe edge cases",
+        "Use property-based testing to find numerical bugs"
+      ],
+      "tasks": [
+        {"level": "foundational", "id": "18.1", "title": "Naive vs Stable Variance", "expected_time": "20-30 minutes"},
+        {"level": "proficiency", "id": "18.1", "title": "Log-Sum-Exp and Softmax", "expected_time": "30-40 minutes"},
+        {"level": "mastery", "title": "Multivariate Normal Log-Likelihood", "expected_time": "50-70 minutes"}
+      ]
+    },
+    {
+      "id": "day-19",
+      "notion_id": "9e6804ea-5e1e-48fe-88ed-8ca5074d2cf1",
+      "title": "Day 19: C++ Numerical Patterns and RAII",
+      "parent_id": "week3-optional",
+      "order": 19,
+      "language": "cpp",
+      "week": "week3",
+      "notion_url": "https://www.notion.so/9e6804ea5e1e48fe88ed8ca5074d2cf1",
+      "sections": [
+        "RAII and Smart Pointers",
+        "Const Correctness",
+        "Eigen Best Practices",
+        "Move Semantics"
+      ],
+      "learning_objectives": [
+        "Use RAII for automatic memory management",
+        "Apply const correctness to prevent bugs",
+        "Use Eigen expression templates to avoid temporaries",
+        "Implement move semantics for efficient data structures"
+      ],
+      "tasks": [
+        {"level": "foundational", "id": "19.1", "title": "Refactor to unique_ptr", "expected_time": "25-35 minutes"},
+        {"level": "proficiency", "id": "19.1", "title": "Matrix Wrapper with Move", "expected_time": "35-50 minutes"},
+        {"level": "mastery", "title": "QR Least Squares Solver", "expected_time": "50-70 minutes"}
+      ]
+    },
+    {
+      "id": "day-20",
+      "notion_id": "ddae7fdf-5b79-4ed5-8b4f-fd807b15856c",
+      "title": "Day 20: Compilation, Optimization Flags, and Microbenchmarking",
+      "parent_id": "week3-optional",
+      "order": 20,
+      "language": "cpp",
+      "week": "week3",
+      "notion_url": "https://www.notion.so/ddae7fdf5b794ed58b4ffd807b15856c",
+      "sections": [
+        "Compiler Optimizations",
+        "Vectorization",
+        "Microbenchmarking in C++",
+        "Hardware Performance Counters"
+      ],
+      "learning_objectives": [
+        "Understand what -O2 and -O3 optimizations do",
+        "Use compiler flags to enable/disable specific optimizations",
+        "Write microbenchmarks in C++",
+        "Interpret perf output (cache misses, branch mispredictions)"
+      ],
+      "tasks": [
+        {"level": "foundational", "id": "20.1", "title": "Optimization Flag Comparison", "expected_time": "25-35 minutes"},
+        {"level": "proficiency", "id": "20.1", "title": "Matrix Multiplication Microbenchmark", "expected_time": "40-55 minutes"},
+        {"level": "mastery", "title": "SIMD-Optimized Sum", "expected_time": "60-90 minutes"}
+      ]
+    }
+  ]
+}
